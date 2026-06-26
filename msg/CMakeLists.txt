@@ -54,7 +54,9 @@ set(msg_files
 	CameraTrigger.msg
 	CanInterfaceStatus.msg
 	CellularStatus.msg
+	CeilingContactStatus.msg
 	CollisionConstraints.msg
+	Esp32UartFrame.msg
 	ControlAllocatorStatus.msg
 	Cpuload.msg
 	DatamanRequest.msg

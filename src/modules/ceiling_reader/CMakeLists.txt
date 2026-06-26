@@ -1,11 +1,10 @@
 ############################################################################
 #
-#   Copyright (c) 2024 PX4 Development Team. All rights reserved.
+#   Copyright (c) 2026 PX4 Development Team. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
 # are met:
-#
 # 1. Redistributions of source code must retain the above copyright
 #    notice, this list of conditions and the following disclaimer.
 # 2. Redistributions in binary form must reproduce the above copyright
@@ -32,20 +31,12 @@
 ############################################################################
 
 px4_add_module(
-	MODULE driver__septentrio
-	MAIN septentrio
-	COMPILE_FLAGS
-		# -DDEBUG_BUILD           # Enable during development of the module
-		-DSEP_LOG_ERROR         # Enable module-level error logs
-		# -DSEP_LOG_WARN          # Enable module-level warning logs
-		# -DSEP_LOG_INFO          # Enable module-level info logs
-		# -DSEP_LOG_TRACE_PARSING # Tracing of parsing steps
-		-Wno-error=overflow
+	MODULE modules__CeilingReader
+	MAIN CeilingReader
 	SRCS
-		septentrio.cpp
-		util.cpp
-		rtcm.cpp
-		sbf/decoder.cpp
-	MODULE_CONFIG
-		module.yaml
+		CeilingReader.cpp
+		CeilingReader.hpp
+	DEPENDS
+		px4_work_queue
+		uorb_msgs
 	)
